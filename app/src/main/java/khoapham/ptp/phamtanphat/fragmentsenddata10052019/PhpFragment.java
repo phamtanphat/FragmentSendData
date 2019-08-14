@@ -8,14 +8,19 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.RatingBar;
 
 public class PhpFragment extends Fragment {
 
+    RatingBar ratingBar;
+    View view;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_php, container, false);
+        view = inflater.inflate(R.layout.fragment_php, container, false);
+        ratingBar = view.findViewById(R.id.ratingbarPhp);
+        return view;
     }
 
 }
