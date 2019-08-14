@@ -3,6 +3,7 @@ package khoapham.ptp.phamtanphat.fragmentsenddata10052019;
 
 import android.os.Bundle;
 
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
@@ -10,12 +11,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class AndroidFragment extends Fragment {
 
     EditText edt;
     Button btn;
     View view;
+    String chuoi = "";
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -23,6 +26,17 @@ public class AndroidFragment extends Fragment {
         edt = view.findViewById(R.id.edittextAndroid);
         btn = view.findViewById(R.id.buttonAndroid);
         return view;
+    }
+
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+        if (!chuoi.equals("")){
+            Toast.makeText(getActivity(), chuoi, Toast.LENGTH_SHORT).show();
+        }
+    }
+    public void setValue(String value){
+        chuoi = value;
     }
 
 }

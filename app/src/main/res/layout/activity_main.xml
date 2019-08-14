@@ -41,5 +41,4 @@
         android:name="khoapham.ptp.phamtanphat.fragmentsenddata10052019.PhpFragment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
-
 </LinearLayout>
