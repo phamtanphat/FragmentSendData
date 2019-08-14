@@ -26,7 +26,7 @@ public class AndroidFragment extends Fragment implements LifecycleOwner , SendVa
     EditText edt;
     Button btn;
     View view;
-
+    SendValue sendValue;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -40,6 +40,17 @@ public class AndroidFragment extends Fragment implements LifecycleOwner , SendVa
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String chuoi = edt.getText().toString();
+                if (chuoi.length() > 0){
+                    PhpFragment phpFragment = (PhpFragment) getActivity().getSupportFragmentManager().findFragmentById(R.id.fragmentPhp);
+                    sendValue = phpFragment;
+                    sendValue.revice(chuoi);
+                }
+            }
+        });
 
     }
 

@@ -5,12 +5,13 @@ import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.RatingBar;
 
-public class PhpFragment extends Fragment {
+public class PhpFragment extends Fragment implements SendValue {
 
     RatingBar ratingBar;
     View view;
@@ -23,4 +24,8 @@ public class PhpFragment extends Fragment {
         return view;
     }
 
+    @Override
+    public void revice(String chuoi) {
+        Log.d("BBB",chuoi);
+    }
 }
