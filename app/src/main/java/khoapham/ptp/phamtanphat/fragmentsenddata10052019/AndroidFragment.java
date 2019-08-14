@@ -21,13 +21,12 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-public class AndroidFragment extends Fragment implements LifecycleOwner {
+public class AndroidFragment extends Fragment implements LifecycleOwner , SendValue{
 
     EditText edt;
     Button btn;
     View view;
 
-    MutableLiveData<String> mutableLiveData = new MutableLiveData<>();
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -41,17 +40,12 @@ public class AndroidFragment extends Fragment implements LifecycleOwner {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
-        mutableLiveData.observe(this, new Observer<String>() {
-            @Override
-            public void onChanged(String s) {
-                if (s.length()>0){
-                    Toast.makeText(getActivity(), s, Toast.LENGTH_SHORT).show();
-                }
-            }
-        });
+
     }
 
-    public void setValue(String value){
-        mutableLiveData.setValue(value);
+
+    @Override
+    public void revice(String chuoi) {
+        Toast.makeText(getActivity(), chuoi, Toast.LENGTH_SHORT).show();
     }
 }
