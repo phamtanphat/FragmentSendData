@@ -1,14 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".PhpFragment">
+    android:orientation="vertical"
+    android:background="#009688"
+    android:layout_height="wrap_content"
+    tools:context=".AndroidFragment">
 
-    <!-- TODO: Update blank fragment layout -->
     <TextView
+        android:textColor="#D1E2E2"
+        android:textSize="40sp"
+        android:gravity="center"
+        android:text="Fragment Php"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
-
-</FrameLayout>
+        android:layout_height="wrap_content" />
+    <RatingBar
+        android:id="@+id/ratingbarPhp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+</LinearLayout>
